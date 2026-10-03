@@ -1,0 +1,39 @@
+define config.text_speed = 0.05
+define config.auto_forward = True
+
+# Game options
+define config.skip_window = True
+define config.allow_skipping = True
+
+# Gameplay settings
+define max_hp = 5
+define starting_time = 30
+define starting_loop = 0
+
+# Inventory settings
+define inventory = {
+    "knife": False,
+    "mental_charm": False,
+    "light_charm": False,
+    "holy_badge": False,
+    "water_sample": False,
+    "bark_piece": False,
+    "seal_materials": False,
+    "seal_complete": False
+}
+
+# State variables
+define hp = max_hp
+define time = starting_time
+define loop = starting_loop
+
+define church_monster_dead = False
+define forest_monster_dead = False
+define sewer_unlocked = False
+define deep_forest_unlocked = False
+define graveyard_unlocked = False
+
+define grave_2 = False
+define grave_6 = False
+define grave_7 = False
+define ritual_found = False

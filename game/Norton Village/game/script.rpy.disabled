@@ -1,0 +1,86 @@
+define e = Character("Eileen")
+
+# Game state variables
+default hp = 5
+default max_hp = 5
+default time = 30
+default loop = 0
+
+# Inventory items
+default knife = False
+default mental_charm = False
+default light_charm = False
+default holy_badge = False
+default water_sample = False
+default bark_piece = False
+default seal_knowledge = False
+default seal_materials = False
+default seal_complete = False
+
+# Monster states
+default church_monster_dead = False
+default forest_monster_dead = False
+
+# Area unlock states
+default sewer_unlocked = False
+default deep_forest_unlocked = False
+default graveyard_unlocked = False
+
+# Grave states
+default grave_2 = False
+default grave_6 = False
+default grave_7 = False
+
+# Ritual state
+default ritual_found = False
+
+# The game starts here.
+label start:
+    scene bg village
+    e "Welcome to Norton Village, a place shrouded in mystery and dread."
+    e "As you explore, remember that time is not on your side."
+    
+    # Main gameplay loop
+    while True:
+        e "You have {time} TIME left."
+        e "What would you like to do?"
+        
+        menu:
+            "Explore the Church":
+                call explore_church
+            "Venture into the Forest":
+                call explore_forest
+            "Investigate the Graveyard":
+                call explore_graveyard
+            "Check Inventory":
+                call check_inventory
+            "End Game":
+                return
+
+label explore_church:
+    e "You step into the dimly lit church, the air thick with an unsettling presence."
+    # Add interactions and possible combat here
+    # Decrease TIME and check for HP
+    return
+
+label explore_forest:
+    e "The forest looms ahead, shadows dancing between the trees."
+    # Add interactions and possible combat here
+    # Decrease TIME and check for HP
+    return
+
+label explore_graveyard:
+    e "The graveyard is eerily silent, tombstones standing like sentinels."
+    # Add interactions and possible combat here
+    # Decrease TIME and check for HP
+    return
+
+label check_inventory:
+    e "You check your inventory."
+    # Display inventory items and their statuses
+    return
+
+# Additional labels for combat, item interactions, and endings would go here.
+
+# End of the script
+return

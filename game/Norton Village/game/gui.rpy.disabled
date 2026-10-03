@@ -1,0 +1,69 @@
+define gui = Character("GUI", color="#FFFFFF")
+
+# GUI Configuration
+define gui_text_color = "#FFFFFF"
+define gui_background_color = "#000000"
+define gui_button_color = "#444444"
+define gui_button_hover_color = "#666666"
+define gui_button_text_color = "#FFFFFF"
+
+# Main Menu
+screen main_menu():
+    tag menu
+    frame:
+        background gui_background_color
+        xalign 0.5
+        yalign 0.5
+        has vbox
+
+        text "Norton Village" size 60 color gui_text_color
+        textbutton "Start Game" action Start()
+        textbutton "Load Game" action ShowMenu("load")
+        textbutton "Options" action ShowMenu("preferences")
+        textbutton "Quit" action Quit()
+
+# Inventory Screen
+screen inventory():
+    tag inventory
+    frame:
+        background gui_background_color
+        xalign 0.5
+        yalign 0.5
+        has vbox
+
+        text "Inventory" size 40 color gui_text_color
+        for item in inventory_items:
+            text item color gui_text_color
+
+        textbutton "Close" action Hide("inventory")
+
+# HUD Screen
+screen hud():
+    tag hud
+    frame:
+        background gui_background_color
+        xalign 0.0
+        yalign 0.0
+        has hbox
+
+        text "HP: [hp]/[max_hp]" color gui_text_color
+        text "TIME: [time]" color gui_text_color
+        text "LOOP: [loop]" color gui_text_color
+
+# Combat Screen
+screen combat():
+    tag combat
+    frame:
+        background gui_background_color
+        xalign 0.5
+        yalign 0.5
+        has vbox
+
+        text "Combat Encounter!" size 40 color gui_text_color
+        text "Choose your action:" color gui_text_color
+
+        textbutton "Attack" action [Attack()]
+        textbutton "Use Item" action [UseItem()]
+        textbutton "Flee" action [Flee()]
+
+        textbutton "Close" action Hide("combat")

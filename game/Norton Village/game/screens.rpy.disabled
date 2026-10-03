@@ -1,0 +1,57 @@
+define config.screen_width = 1280
+define config.screen_height = 720
+
+screen hud():
+    frame:
+        xalign 0.5
+        yalign 0.05
+        has vbox
+
+        text "HP: [hp]/[max_hp]" size 30
+        text "TIME: [time]" size 30
+        text "LOOP: [loop]" size 30
+
+screen inventory():
+    tag menu
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        has vbox
+
+        text "Inventory" size 40
+
+        if knife:
+            text "Knife: Acquired" size 30
+        else:
+            text "Knife: Not Acquired" size 30
+
+        if mental_charm:
+            text "Mental Charm: Acquired" size 30
+        else:
+            text "Mental Charm: Not Acquired" size 30
+
+        if light_charm:
+            text "Light Charm: Acquired" size 30
+        else:
+            text "Light Charm: Not Acquired" size 30
+
+        if holy_badge:
+            text "Holy Badge: Acquired" size 30
+        else:
+            text "Holy Badge: Not Acquired" size 30
+
+        textbutton "Close" action Hide("inventory")
+
+screen game_over():
+    tag menu
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        has vbox
+
+        text "Game Over" size 50
+        text "You have succumbed to the horrors of Norton Village." size 30
+        textbutton "Restart" action Jump("start")
+        textbutton "Quit" action Quit()
