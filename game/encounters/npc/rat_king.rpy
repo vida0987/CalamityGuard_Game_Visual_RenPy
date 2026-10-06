@@ -4,11 +4,12 @@ label encounter_rat_king:
 
     "[loc('dialogue.rat_king.result.conversation_intro')]"
 
+    jump encounter_rat_king_menu
+
+label encounter_rat_king_menu:
     menu:
 
         "[loc('dialogue.rat_king.question.ask')]":
-
-            call spend_time(1) from _call_spend_time_50
 
             "[loc('dialogue.rat_king.result.ask_1')]"
             "[loc('dialogue.rat_king.result.ask_2')]"
@@ -25,7 +26,7 @@ label encounter_rat_king:
                     "[loc('dialogue.rat_king.result.give_cheese_3')]"
                     "[loc('dialogue.rat_king.result.give_cheese_4')]"
 
-                    jump encounter_rat_king
+                    jump encounter_rat_king_menu
 
                 "[loc('dialogue.rat_king.question.keep_cheese')]":
 
@@ -33,11 +34,9 @@ label encounter_rat_king:
                     "[loc('dialogue.rat_king.result.keep_cheese_2')]"
                     "[loc('dialogue.rat_king.result.keep_cheese_3')]"
 
-                    jump encounter_rat_king
+                    jump encounter_rat_king_menu
 
         "[loc('dialogue.rat_king.question.identity')]":
-
-            call spend_time(1) from _call_spend_time_51
 
             "[loc('dialogue.rat_king.result.identity_1')]"
             "[loc('dialogue.rat_king.result.identity_2')]"
@@ -45,7 +44,7 @@ label encounter_rat_king:
             "[loc('dialogue.rat_king.result.identity_4')]"
             "[loc('dialogue.rat_king.result.identity_5')]"
 
-            jump encounter_rat_king
+            jump encounter_rat_king_menu
 
         "[loc('dialogue.rat_king.question.attack')]":
 

@@ -8,6 +8,11 @@ label forest_edge:
     "[loc('location.forest_edge.description.2')]"
     "[loc('location.forest_edge.description.3')]"
 
+    jump forest_edge_menu
+
+label forest_edge_menu:
+    scene bg forest_edge_bg
+
     menu:
 
         "[loc('location.forest_edge.option.go_left')]":
@@ -33,7 +38,7 @@ label forest_edge:
             "[loc('location.forest_edge.result.search_area_1')]"
             "[loc('location.forest_edge.result.search_area_2')]"
 
-            jump forest_edge
+            jump forest_edge_menu
 
         "[loc('travel.travel')]":
 

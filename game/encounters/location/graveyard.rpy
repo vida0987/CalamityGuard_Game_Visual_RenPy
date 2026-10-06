@@ -5,11 +5,17 @@ label graveyard:
     if grave_7 and grave_6 and grave_2:
         "[loc('location.graveyard.result.final_grave')]"
         jump boss
+
+    jump graveyard_menu
+
+label graveyard_menu:
+    scene bg graveyard_bg
+
     menu:
         "[loc('location.graveyard.option.grave_1')]":
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_12
-            jump graveyard
+            jump graveyard_menu
         "[loc('location.graveyard.option.grave_2')]":
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_13
@@ -18,7 +24,7 @@ label graveyard:
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_14
             call encounter_grave_monster from _call_encounter_grave_monster_1
-            jump graveyard
+            jump graveyard_menu
         "[loc('location.graveyard.option.grave_4')]":
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_15
@@ -26,7 +32,7 @@ label graveyard:
         "[loc('location.graveyard.option.grave_5')]":
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_16
-            jump graveyard
+            jump graveyard_menu
         "[loc('location.graveyard.option.grave_6')]":
             if not has_item("shovel"):
                     call spend_time(1) from _call_spend_time_17
@@ -50,11 +56,11 @@ label grave_two:
                 $ grave_2 = True
                 "[loc('location.graveyard.result.seal_closes')]"
             "[loc('location.graveyard.option.leave')]":
-                jump graveyard
+                jump graveyard_menu
     else:
         "[loc('location.graveyard.result.grave_fine')]"
     call check_seal from _call_check_seal
-    jump graveyard
+    jump graveyard_menu
 
 label grave_six:
     if not grave_6:
@@ -66,11 +72,11 @@ label grave_six:
                 $ grave_6 = True
                 "[loc('location.graveyard.result.seal_closes')]"
             "[loc('location.graveyard.option.leave')]":
-                jump graveyard
+                jump graveyard_menu
     else:
         "[loc('location.graveyard.result.grave_fine')]"
     call check_seal from _call_check_seal_1
-    jump graveyard
+    jump graveyard_menu
 
 label grave_seven:
     if not grave_7:
@@ -82,9 +88,9 @@ label grave_seven:
                 $ grave_7 = True
                 "[loc('location.graveyard.result.seal_closes')]"
             "[loc('location.graveyard.option.leave')]":
-                jump graveyard
+                jump graveyard_menu
     else:
         "[loc('location.graveyard.result.grave_fine')]"
     call check_seal from _call_check_seal_2
-    jump graveyard
+    jump graveyard_menu
 

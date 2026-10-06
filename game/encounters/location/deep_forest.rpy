@@ -19,6 +19,11 @@ label deep_forest_1_after_battle:
     "[loc('location.deep_forest_1.description.after_battle.1')]"
     "[loc('location.deep_forest_1.description.after_battle.2')]"
 
+    jump deep_forest_1_menu
+
+label deep_forest_1_menu:
+    scene bg deep_forest_2_bg
+
     menu:
         "[loc('location.deep_forest_1.option.inspect_body')]":
             call spend_time(1) from _call_spend_time_5
@@ -31,7 +36,7 @@ label deep_forest_1_after_battle:
             "[loc('location.deep_forest_1.result.inspect_body.7')]"
             "[loc('location.deep_forest_1.result.inspect_body.8')]"
             "[loc('location.deep_forest_1.result.inspect_body.9')]"
-            jump deep_forest_1_after_battle
+            jump deep_forest_1_menu
         "[loc('location.deep_forest_1.option.tear_body')]" if not seal_material_c:
             call spend_time(1) from _call_spend_time_6
             "[loc('location.deep_forest_1.result.tear_body.1')]"
@@ -40,6 +45,6 @@ label deep_forest_1_after_battle:
             "[loc('location.deep_forest_1.result.tear_body.4')]"
             $ seal_material_c = True
             $ add_item("seal_material_c")
-            jump deep_forest_1_after_battle
+            jump deep_forest_1_menu
         "[loc('location.deep_forest_1.option.back')]":
             jump travel

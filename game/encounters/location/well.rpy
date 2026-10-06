@@ -7,6 +7,11 @@ label well:
     "[loc('location.well.description.1')]"
     "[loc('location.well.description.2')]"
 
+    jump well_menu
+
+label well_menu:
+    scene bg well_bg
+
     menu:
 
         "[loc('location.well.option.pull_bucket')]" if not seal_material_a:
@@ -20,7 +25,7 @@ label well:
             "[loc('location.well.result.fragment_result_2')]"
             "[loc('location.well.result.fragment_result_3')]"
 
-            jump well
+            jump well_menu
 
         "[loc('location.well.option.search_well')]":
 
@@ -32,7 +37,7 @@ label well:
             "[loc('location.well.result.symbol_result_2')]"
             "[loc('location.well.result.symbol_result_3')]"
 
-            jump well
+            jump well_menu
 
         "[loc('location.well.option.examine_shaft')]" if not sewer_unlocked:
 
@@ -45,7 +50,7 @@ label well:
             "[loc('location.well.result.sewer_result_3')]"
             "[loc('location.well.result.sewer_result_4')]"
 
-            jump well
+            jump well_menu
 
         "[loc('location.well.option.enter_sewer')]" if sewer_unlocked:
 

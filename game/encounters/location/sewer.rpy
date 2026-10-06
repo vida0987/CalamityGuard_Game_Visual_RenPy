@@ -8,6 +8,11 @@ label sewer:
     "[loc('location.sewer.description.2')]"
     "[loc('location.sewer.description.3')]"
 
+    jump sewer_menu
+
+label sewer_menu:
+    scene bg sewer_bg
+
     menu:
 
         "[loc('location.sewer.option.inspect_gold')]":
@@ -20,7 +25,7 @@ label sewer:
             "[loc('location.sewer.result.gold_result_1')]"
             "[loc('location.sewer.result.gold_result_2')]"
 
-            jump sewer
+            jump sewer_menu
 
         "[loc('location.sewer.option.take_sword')]":
 
@@ -32,7 +37,7 @@ label sewer:
             "[loc('location.sewer.result.sword_result_1')]"
             "[loc('location.sewer.result.sword_result_2')]"
 
-            jump sewer
+            jump sewer_menu
 
         "[loc('location.sewer.option.read_document')]" if not ritual_found:
 
@@ -45,13 +50,13 @@ label sewer:
             "[loc('location.sewer.result.document_result_2')]"
             "[loc('location.sewer.result.document_result_3')]"
 
-            jump sewer
+            jump sewer_menu
 
         "[loc('location.sewer.option.follow_rats')]":
 
             call encounter_rat_king from _call_encounter_rat_king
 
-            jump sewer
+            jump sewer_menu
 
         "[loc('location.sewer.option.perform_ritual')]" if ritual_found:
 

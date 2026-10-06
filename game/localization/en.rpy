@@ -292,6 +292,8 @@ init python:
             "seal_material_a": "Red Gem",
             "seal_material_b": "Green Gem",
             "seal_material_c": "Golden Seal Fragment",
+            "sword": "Sword",
+            "ritual_document": "Magical Ritual Document",
         },
         "character": {
             "church_monster": "Church Monster",

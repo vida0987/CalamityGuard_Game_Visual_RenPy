@@ -418,6 +418,8 @@ init python:
                     "seal_material_a": "Ngọc màu đỏ",
                     "seal_material_b": "Ngọc màu xanh lá",
                     "seal_material_c": "Mảnh ngọc phong ấn màu vàng kim",
+                    "sword": "Thanh kiếm",
+                    "ritual_document": "Bản nghi thức ma pháp",
                 },
                 "character": {
                     "church_monster": "Quái vật nhà thờ",

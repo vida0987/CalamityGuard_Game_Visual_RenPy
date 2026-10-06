@@ -1,4 +1,4 @@
-define STARTING_HP = 5
+define STARTING_HP = 7
 define STARTING_TIME = 30
 
 image forest_monster = "images/monster/tree_monster_B.png"

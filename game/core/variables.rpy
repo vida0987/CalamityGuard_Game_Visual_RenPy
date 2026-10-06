@@ -1,5 +1,5 @@
-default hp = 5
-default max_hp = 5
+default hp = 7
+default max_hp = 7
 default time = 30
 default loop = 1
 default current_area = "Village Gate"

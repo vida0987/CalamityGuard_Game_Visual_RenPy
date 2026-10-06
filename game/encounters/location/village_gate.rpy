@@ -6,6 +6,11 @@ label village_gate:
 
     "[loc('location.village_gate.description')]"
 
+    jump village_gate_menu
+
+label village_gate_menu:
+    scene bg village_gate_bg
+
     menu:
 
         "[loc('location.village_gate.option.examine_gate')]":
@@ -14,7 +19,7 @@ label village_gate:
 
             "[loc('location.village_gate.result.gate_result')]"
 
-            jump village_gate
+            jump village_gate_menu
 
         "[loc('location.village_gate.option.examine_tree')]":
 
@@ -24,7 +29,7 @@ label village_gate:
 
             "[loc('location.village_gate.result.tree_result_2')]"
 
-            jump village_gate
+            jump village_gate_menu
 
         "[loc('location.village_gate.option.examine_stone')]":
 
@@ -32,7 +37,7 @@ label village_gate:
 
             "[loc('location.village_gate.result.stone_result')]"
 
-            jump village_gate
+            jump village_gate_menu
 
         "[loc('location.village_gate.option.look_sky')]":
 
@@ -40,7 +45,7 @@ label village_gate:
 
             "[loc('location.village_gate.result.sky_result')]"
 
-            jump village_gate
+            jump village_gate_menu
 
         "[loc('location.village_gate.option.read_note')]" if not note_read:
 
@@ -54,7 +59,7 @@ label village_gate:
 
             "[loc('location.village_gate.result.note_result_3')]"
 
-            jump village_gate
+            jump village_gate_menu
 
         "[loc('location.village_gate.option.leave')]":
 

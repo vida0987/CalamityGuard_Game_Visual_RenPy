@@ -8,6 +8,11 @@ label church:
     "[loc('location.church.description.2')]"
     "[loc('location.church.description.3')]"
 
+    jump church_menu
+
+label church_menu:
+    scene bg chruch_bg
+
     menu:
 
         "[loc('location.church.option.use_main_entrance')]" if not church_monster_dead:
@@ -18,7 +23,7 @@ label church:
 
                 $ church_monster_dead = True
 
-            jump church
+            jump church_menu
 
         "[loc('location.church.option.look_window')]" if not church_monster_dead:
 
@@ -34,7 +39,7 @@ label church:
 
                 $ church_monster_dead = True
 
-            jump church
+            jump church_menu
 
         "[loc('location.church.option.examine_rear_path')]" if not graveyard_unlocked:
 
@@ -69,6 +74,11 @@ label church_inside:
     "[loc('location.church.description.interior_description.2')]"
     "[loc('location.church.description.interior_description.3')]"
 
+    jump church_inside_menu
+
+label church_inside_menu:
+    scene bg chruch_2_bg
+
     menu:
 
         "[loc('location.church.option.search_holy_symbol')]" if not has_item("holy_badge"):
@@ -79,7 +89,7 @@ label church_inside:
 
             "[loc('location.church.result.badge_result')]"
 
-            jump church_inside
+            jump church_inside_menu
 
         "[loc('location.church.option.search_confession')]":
 
@@ -87,7 +97,7 @@ label church_inside:
 
             call encounter_priest from _call_encounter_priest
 
-            jump church_inside
+            jump church_inside_menu
 
         "[loc('location.church.option.open_graveyard_exit')]":
 
@@ -97,7 +107,7 @@ label church_inside:
 
             "[loc('location.church.result.exit_result')]"
 
-            jump church_inside
+            jump church_inside_menu
 
         "[loc('location.church.option.enter_graveyard')]" if graveyard_unlocked:
 

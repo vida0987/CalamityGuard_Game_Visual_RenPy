@@ -9,6 +9,11 @@ label house_a:
     "[loc('location.house_a.description.3')]"
     "[loc('location.house_a.description.4')]"
 
+    jump house_a_menu
+
+label house_a_menu:
+    scene bg house_A_bg
+
     menu:
 
         "[loc('location.house_a.option.take_rake')]" if not has_item("rake"):
@@ -19,7 +24,7 @@ label house_a:
 
             "[loc('location.house_a.result.rake_result')]"
 
-            jump house_a
+            jump house_a_menu
 
         "[loc('location.house_a.option.take_shovel')]" if not has_item("shovel"):
 
@@ -29,7 +34,7 @@ label house_a:
 
             "[loc('location.house_a.result.shovel_result')]"
 
-            jump house_a
+            jump house_a_menu
 
         "[loc('location.house_a.option.take_knife')]" if not has_item("knife"):
 
@@ -39,7 +44,7 @@ label house_a:
 
             "[loc('location.house_a.result.knife_result')]"
 
-            jump house_a
+            jump house_a_menu
 
         "[loc('location.house_a.option.take_hammer')]" if not has_item("hammer"):
 
@@ -49,7 +54,7 @@ label house_a:
 
             "[loc('location.house_a.result.hammer_result')]"
 
-            jump house_a
+            jump house_a_menu
 
         "[loc('location.house_a.option.search_house')]":
 
@@ -61,7 +66,7 @@ label house_a:
 
             "[loc('location.house_a.result.house_result_3')]"
 
-            jump house_a
+            jump house_a_menu
 
         "[loc('travel.travel')]":
 

@@ -6,7 +6,7 @@ define config.skip_window = True
 define config.allow_skipping = True
 
 # Gameplay settings
-define max_hp = 5
+define max_hp = 7
 define starting_time = 30
 define starting_loop = 0
 

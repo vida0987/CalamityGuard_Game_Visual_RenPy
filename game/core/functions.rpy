@@ -11,4 +11,6 @@ init python:
             "seal_material_a",
             "seal_material_b",
             "seal_material_c",
+            "sword",
+            "ritual_document",
         )

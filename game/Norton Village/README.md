@@ -4,7 +4,7 @@ Norton Village is a text-only visual novel that immerses players in a cosmic hor
 
 ## Gameplay Mechanics
 
-- **HP**: Players start with a maximum of 5 HP. Encounters may cause damage, affecting survival.
+- **HP**: Players start with a maximum of 7 HP. Encounters may cause damage, affecting survival.
 - **TIME**: Players begin with 30 TIME, which decreases with travel and actions. If TIME reaches 0, the game resets.
 - **LOOP**: The game tracks the number of loops experienced, increasing after each reset.
 - **Inventory**: Collect items that influence gameplay, including weapons and materials.

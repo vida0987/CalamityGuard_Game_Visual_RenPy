@@ -6,6 +6,12 @@ label deep_forest_2:
 
     "[loc('location.deep_forest_2.description.1')]"
     "[loc('location.deep_forest_2.description.2')]"
+
+    jump deep_forest_2_menu
+
+label deep_forest_2_menu:
+    scene bg deep_forest_bg
+
     menu:
 
         "[loc('location.deep_forest_2.option.go_forward')]":
@@ -27,11 +33,13 @@ label deep_forest_2:
 
                     $ deep_forest_2_monsters_killed += 1
 
-                jump deep_forest_2
+                jump deep_forest_2_menu
             else:
                 if not deep_forest_2_npc_met:
                     $ deep_forest_2_npc_met = True
                     call cultist from _call_cultist
+
+                jump deep_forest_2_menu
 
         "[loc('location.deep_forest_2.option.return')]":
 
